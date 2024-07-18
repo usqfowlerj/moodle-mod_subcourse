@@ -92,6 +92,7 @@ class mobile {
             'currentgrade' => $currentgrade,
             'hasgrade' => isset($currentgrade),
             'warning' => $warning,
+            'canusemoduleinfo' => $args->appversioncode >= 44000,
         ];
 
         return [
