@@ -430,9 +430,10 @@ function subcourse_update_grades($subcourse, $userid=0, $nullifnone=true) {
     if ($subcourse->refcourse) {
         $refgrades = subcourse_fetch_refgrades($subcourse->id, $subcourse->refcourse, false, $userid, false);
     } else {
-        // Prevent empty referenced course id coding error
+        // Prevent empty referenced course id coding error.
         return GRADE_UPDATE_FAILED;
     }
+    
     if ($refgrades && $refgrades->grades) {
         if (!empty($refgrades->localremotescale)) {
             // Unable to fetch remote grades - local scale is used in the remote course.
