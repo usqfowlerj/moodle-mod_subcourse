@@ -55,9 +55,7 @@ Feature: Grades are fetched automatically from the referenced course
     #
     # Create the subcourse instance.
     #
-    And I am on "MainCourse" course homepage
-    And I turn editing mode on
-    And I add a "Subcourse" to section "1" and I fill the form with:
+    And I add a "subcourse" activity to course "MainCourse" section "1" and I fill the form with:
       | Subcourse name                    | Unit course 1       |
       | Fetch grades from                 | RefCourse (R)       |
       | Redirect to the referenced course | 0                   |

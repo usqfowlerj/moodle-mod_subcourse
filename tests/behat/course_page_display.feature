@@ -29,7 +29,7 @@ Feature: Progress and grade in referenced course can be displayed on the course 
       | Enable completion tracking 	| Yes |
     And I press "Save and display"
     And I turn editing mode on
-    And I add a "Text and media area" to section "1" and I fill the form with:
+    And I add a "label" activity to course "RefCourse" section "1" and I fill the form with:
       | Text   | Just a simple module to activate progress tracking |
     And I turn editing mode off
     And I navigate to "Setup > Gradebook setup" in the course gradebook
@@ -46,9 +46,7 @@ Feature: Progress and grade in referenced course can be displayed on the course 
 
   @javascript
   Scenario: Progress and grade displayed on both course main page and subcourse view page.
-    Given I am on "MainCourse" course homepage
-    And I turn editing mode on
-    And I add a "Subcourse" to section "1" and I fill the form with:
+    Given I add a "subcourse" activity to course "MainCourse" section "1" and I fill the form with:
       | Subcourse name                                          | Unit course 1       |
       | Fetch grades from                                       | RefCourse (R)       |
       | Redirect to the referenced course                       | 0                   |
@@ -69,9 +67,7 @@ Feature: Progress and grade in referenced course can be displayed on the course 
 
   @javascript
   Scenario: Progress and grade displayed on subcourse view page only.
-    Given I am on "MainCourse" course homepage
-    And I turn editing mode on
-    And I add a "Subcourse" to section "1" and I fill the form with:
+    Given I add a "subcourse" activity to course "MainCourse" section "1" and I fill the form with:
       | Subcourse name                                          | Unit course 1       |
       | Fetch grades from                                       | RefCourse (R)       |
       | Redirect to the referenced course                       | 0                   |

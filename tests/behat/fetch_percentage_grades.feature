@@ -116,9 +116,7 @@ Feature: Grades can be fetched either a real values or as percentages
 
   @javascript
   Scenario: Grades are fetched as real values by default
-    Given I am on the "MainCourse" course page logged in as "teacher1"
-    And I turn editing mode on
-    And I add a "Subcourse" to section "1" and I fill the form with:
+    Given I add a "subcourse" activity to course "MainCourse" section "1" and I fill the form with:
       | Subcourse name                    | Unit course 1       |
       | Fetch grades from                 | RefCourse (R)       |
       | Redirect to the referenced course | 0                   |
@@ -146,9 +144,7 @@ Feature: Grades can be fetched either a real values or as percentages
 
   @javascript
   Scenario: Grades can be fetched as percentual values
-    Given I am on the "MainCourse" course page logged in as "teacher1"
-    And I turn editing mode on
-    And I add a "Subcourse" to section "1" and I fill the form with:
+    Given I add a "subcourse" activity to course "MainCourse" section "1" and I fill the form with:
       | Subcourse name                    | Unit course 1       |
       | Fetch grades from                 | RefCourse (R)       |
       | Redirect to the referenced course | 0                   |
