@@ -364,7 +364,8 @@ function subcourse_get_coursemodule_info($coursemodule) {
     global $CFG, $DB;
 
     $subcourse = $DB->get_record('subcourse', ['id' => $coursemodule->instance],
-        'id, name, intro, introformat, instantredirect, blankwindow, coursepageprintgrade, coursepageprintprogress');
+        'id, name, intro, introformat, instantredirect, blankwindow, coursepageprintgrade, coursepageprintprogress, ' .
+            'completioncourse');
 
     if (!$subcourse) {
         return null;
@@ -385,6 +386,10 @@ function subcourse_get_coursemodule_info($coursemodule) {
     if ($coursemodule->showdescription) {
         // Set content from intro and introformat. Filters are disabled because we filter with format_text at display time.
         $info->content = format_module_intro('subcourse', $subcourse, $coursemodule->id, false);
+    }
+
+    if ($coursemodule->completion == COMPLETION_TRACKING_AUTOMATIC) {
+        $info->customdata->customcompletionrules['completioncourse'] = $subcourse->completioncourse;
     }
 
     return $info;
