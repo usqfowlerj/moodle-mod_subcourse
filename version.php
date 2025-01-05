@@ -28,5 +28,5 @@ $plugin->component = 'mod_subcourse';
 $plugin->release = 2024072400;
 $plugin->version = 2024072400;
 $plugin->maturity = MATURITY_STABLE;
-$plugin->requires = 2024041200; // Requires 4.4.
-$plugin->supported = [404, 404];
+$plugin->requires = 2024100700; // Requires 4.5.
+$plugin->supported = [405, 405];
